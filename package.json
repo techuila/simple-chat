@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "server": "pnpm --filter server",
+    "web": "pnpm --filter web"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +22,11 @@
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
