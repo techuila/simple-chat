@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+.tooltip {
+  @apply invisible;
+}
+
+.has-tooltip {
+  @apply flex gap-5 items-center;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
